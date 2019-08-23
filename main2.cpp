@@ -2,8 +2,8 @@
 
 using namespace std;
 
-unsigned int ordenar(long int i,long int j){
- 	unsigned int resultado;
+int ordenar(int i, int j){
+	unsigned int resultado;
 	unsigned int temp1;
 	unsigned int temp2;
 	unsigned int max=0;
@@ -30,13 +30,18 @@ int main() {
 	unsigned int i=0;
 	unsigned int j=0;
 	while (scanf("%u %u",&i, &j)==2){
-		cout<<i<<" "<<j<<" ";
-		if (i<j)
-			i= ordenar(i,j);
-		else
-			i= ordenar(j,i);
-		
-		cout<<i<<endl;
+		if (i<10000 & i>0 & j<10000 & j > 0){
+			cout<<i<<" "<<j<<" ";
+			if (i<j)
+				i= ordenar(i,j);
+			else
+				i= ordenar(j,i);
+		}
+		else{
+			cout<<"Invalid input";
+			break;
+		}
+		cout<<i;
 	}
     return 0;
 }
